@@ -2,7 +2,6 @@
 
 (require racket/port)
 (require racket/string)
-(require racket/function)
 (require racket/list)
 
 (define (reduce f start lst)
@@ -30,7 +29,7 @@
 (define (sublists-mod-i lst)
   (for/list ([i (range (length lst))])
     (for/list ([x lst] [j (range (length lst))]
-               #:unless (equal? i j))
+                       #:unless (equal? i j))
       x)))
 
 (define (solve-part-1 reports)
